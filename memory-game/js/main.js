@@ -39,12 +39,6 @@ if (cardsInPlay[0] === cardsInPlay[1]) {
 }
 };
 
-
-
-
-
-
-	
 function flipCard() {
 	let cardId = this.getAttribute('data-id')
 	cardsInPlay.push(cards[cardId].rank);
@@ -54,6 +48,12 @@ function flipCard() {
 	this.setAttribute('src' ,cards[cardId].cardImage);
 	checkForMatch();
 };
+
+if (cardsInPlay.length === 2 && cardsInPlay[0] === cardsInPlay[1]) {
+	alert('you have found a match');
+} else {
+	alert("sorry, try again");
+}
 
 function createBoard() {
 	for (let i = 0; i < cards.length; i++) {
